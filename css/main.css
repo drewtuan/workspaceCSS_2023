@@ -54,6 +54,8 @@ h3{
 }
 
 
+
+
 /* 03: Layout */
 /* For test */
 div.explanation, div.requirements,div.benefits,div.participation{
@@ -64,6 +66,7 @@ div.explanation, div.requirements,div.benefits,div.participation{
     margin:10px;
     border: 1px solid black;
     background-image: url(../img/newspaper3.jpg);
+    border-top-left-radius: 190px / 60px;
 }
 div.explanation{
     left: 0%;
@@ -91,6 +94,11 @@ aside.sidebar{
     width: 20%;
     height: 100%;
 }
+
+div.extra1 {
+    z-index: -1;
+}
+
 div.extra2{
     position: fixed;
     bottom:0;
@@ -120,4 +128,13 @@ div.extra1{
     height: 80%;
     padding: 2%;
     background-image: url(../img/newspaper1.jpg);
+}
+
+a:hover {
+    font-weight: bold;
+}
+
+a:nth-child(2):hover {
+    background-color: red;
+    font-size: 20px;
 }
