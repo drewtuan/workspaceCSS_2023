@@ -41,6 +41,10 @@ aside.sidebar{
     src: url(../fonts/chunkfive.woff);
 }
 
+section.banner {
+    float: right;
+}
+
 header h1{
     font-family: 'myfont', sans-serif;
     font-weight: 400;
@@ -50,10 +54,13 @@ header h1{
 }
 h3{
     font-family: 'Ranchers',cursive;
-    font-size: 1.25em;
+    font-size: 1em;
+    text-align: center;
 }
-
-
+a{
+    text-decoration: none;
+    text-transform: uppercase;
+}
 
 
 /* 03: Layout */
@@ -62,30 +69,41 @@ div.explanation, div.requirements,div.benefits,div.participation{
     position: fixed;
     top: var(--page-position);
     width: var(--page-width);
+    height: 80%;
     padding-left: 10px;
     margin:10px;
     border: 1px solid black;
     background-image: url(../img/newspaper3.jpg);
-    border-top-left-radius: 190px / 60px;
+
 }
 div.explanation{
     left: 0%;
+    transition: 2s;
 }
 div.requirements{
     left: 12vw;
+    transition: 2s;
 }
 div.benefits{
     left: 24vw;
+    transition: 2s;
 }
 div.participation{
     left: 36vw;
+    transition: 2s;
 }
 div.explanation h3, div.requirements h3,div.benefits h3,div.participation h3{
-    margin-top: -15%;
+    margin-top: -10%;
     width:var(--tab-width);
     height: var(--tab-height);
     background-color: var(--tab-color);
-
+    border-top-left-radius: 50px;
+    border-top-right-radius: 20px 10px;
+    text-align:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
 }
 aside.sidebar{
     position: absolute;
@@ -94,11 +112,6 @@ aside.sidebar{
     width: 20%;
     height: 100%;
 }
-
-div.extra1 {
-    z-index: -1;
-}
-
 div.extra2{
     position: fixed;
     bottom:0;
@@ -109,6 +122,16 @@ div.extra2{
 }
 
 /* footer -- try it outside of the clas */
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 40% ;
+    width: 20%;
+    text-align: center;
+    background-color: var(--footbar-color);
+    border: 1px solid var(--border-color);
+    z-index: 3;
+}
 /* introductio -in the middle */
 section.intro{
     position: fixed;
@@ -118,6 +141,7 @@ section.intro{
     height: 80%;
     padding: 2%;
     background-image: url(../img/newspaper3.jpg);
+    transform: rotate(-20deg) translate(-100px,0);
 }
 
 div.extra1{
@@ -128,13 +152,79 @@ div.extra1{
     height: 80%;
     padding: 2%;
     background-image: url(../img/newspaper1.jpg);
+    /* rotate the div yourself */
+    z-index: -1;
 }
 
-a:hover {
-    font-weight: bold;
+/* 04: other decoration */
+div.explanation:active{
+    top:15vh;
 }
 
-a:nth-child(2):hover {
-    background-color: red;
-    font-size: 20px;
+div.requirements:active{
+    top:15vh;
 }
+
+div.benefits:active{
+    top:15vh;
+}
+
+div.participation:active {
+    top:15vh;
+}
+
+a:hover{
+    font-size: 1.2em;
+    text-indent: -100px;
+}
+
+p::first-letter{
+    font-size:2em;
+    font-style: italic;
+}
+
+
+p:nth-child(2n){
+    background-color: hsla(359, 39%, 35%, 0.9);
+}
+p:nth-child(2n+1){
+    background-color: rgb(184, 40, 148);
+}
+
+
+section.intro h3 ~p {
+    opacity: 1;
+    transition: all 3s ease-in-out;
+    
+}
+
+section.intro h3:hover ~p {
+    opacity: 0;
+    transition: scale(0.2);
+    
+}
+
+/*06 animation */
+
+footer {
+    animation: 15s ease-in 1s alternate infinite moveback;
+}
+@keyframes moveback {
+    from {transform: translate(-500px,0px);}
+
+    30%{ transform:translate(-200px, 2px);}
+
+    50%{transform: translate(400px,0);}
+
+    70%{transform: translate(-300, 7px);}
+}
+
+h2 {
+    background-image: linear-gradient(red,rgb(255, 170, 0),white);
+}
+
+
+
+
+
+
